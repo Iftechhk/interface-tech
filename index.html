@@ -82,22 +82,28 @@ h1,h2,h3{line-height:1.3;margin:0}
 header.site{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px solid var(--line);transition:box-shadow .35s ease}
 header.site.scrolled{box-shadow:0 8px 28px rgba(15,37,64,.08)}
 @media (prefers-color-scheme: dark){ header.site.scrolled{box-shadow:0 8px 28px rgba(0,0,0,.4)} }
-.header-in{display:flex;align-items:center;gap:22px;height:76px}
+header.site .wrap{max-width:1340px}
+.header-in{display:flex;align-items:center;gap:16px;height:76px}
 .logo{display:flex;align-items:center;gap:11px;color:var(--ink);flex-shrink:0}
 .logo-img{height:44px;width:auto;max-width:64px;object-fit:contain;background:#fff;border-radius:10px;padding:3px 5px;box-shadow:0 2px 10px rgba(15,37,64,.08);flex-shrink:0}
 footer.site .logo-img{height:42px}
 .logo-text{line-height:1.15}
-.logo-text b{font-size:1.06rem;font-weight:800;letter-spacing:-.01em;display:block}
-.logo-text span{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:700}
-nav.main{display:flex;gap:2px;margin-left:auto}
-nav.main a{color:var(--ink-2);font-weight:700;font-size:.94rem;padding:9px 13px;border-radius:999px}
+.logo-text b{font-size:1.02rem;font-weight:800;letter-spacing:-.01em;display:block;white-space:nowrap}
+.logo-text span{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:700;white-space:nowrap}
+nav.main{display:flex;align-items:center;flex-wrap:nowrap;gap:2px;margin-left:auto;min-width:0}
+nav.main a{color:var(--ink-2);font-weight:700;font-size:.9rem;line-height:1;padding:9px 10px;border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center}
 nav.main a:hover{color:var(--brand);background:var(--brand-soft)}
-.header-actions{display:flex;align-items:center;gap:10px;margin-left:6px}
-.lang-switch{display:flex;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:3px}
-.lang-switch button{border:0;background:transparent;font:inherit;font-weight:800;font-size:.82rem;padding:5px 13px;border-radius:999px;cursor:pointer;color:var(--muted);min-height:2rem}
+.header-actions{display:flex;align-items:center;gap:10px;margin-left:2px;flex-shrink:0}
+.lang-switch{display:flex;align-items:center;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:3px;flex-shrink:0}
+.lang-switch button{border:0;background:transparent;font:inherit;font-weight:800;font-size:.82rem;line-height:1;padding:6px 11px;border-radius:999px;cursor:pointer;color:var(--muted);min-height:2rem;white-space:nowrap}
 .lang-switch button.active{background:var(--brand);color:#fff}
 @media (prefers-color-scheme: dark){ .lang-switch button.active{color:#13141f} }
-.header-cta{white-space:nowrap}
+.header-cta{white-space:nowrap;padding:11px 20px;font-size:.92rem;line-height:1}
+@media (max-width:1120px){
+  nav.main,.header-cta{display:none}
+  .menu-btn{display:flex}
+  .header-actions{margin-left:auto}
+}
 .menu-btn{display:none;border:1px solid var(--line);background:var(--surface);border-radius:50%;width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center}
 .menu-btn svg{width:22px;height:22px;stroke:var(--ink)}
 .mobile-nav{display:none;border-top:1px solid var(--line);padding:10px 20px 16px;background:var(--surface)}
@@ -233,6 +239,23 @@ html.js .svc:nth-child(even).reveal.in{animation-name:svcInR}
 html.js .band-list li.reveal.in{animation:svcInL 1s cubic-bezier(.22,.61,.36,1) both}
 html.js .band-list li:nth-child(even).reveal.in{animation-name:svcInR}
 .photo-band .band-cta{margin-top:32px}
+.fs-official{display:flex;gap:16px;align-items:flex-start;background:var(--brand);color:#fff;border-radius:22px;padding:24px 30px;box-shadow:0 12px 30px rgba(15,37,64,.18);margin:-8px 54px 26px 0}
+.fs-official .badge-ic{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fs-official .badge-ic svg{width:24px;height:24px;stroke:#fff}
+.fs-official b{display:block;font-size:1.08rem;margin-bottom:2px}
+.fs-official p{margin:0;font-size:.94rem;opacity:.92;max-width:46rem}
+.fs-subhead{margin:44px 0 22px;max-width:760px}
+.fs-subhead h3{font-size:clamp(1.35rem,2.6vw,1.75rem);font-weight:900;margin:0 0 8px}
+.fs-subhead p{margin:0;color:var(--muted);font-size:.98rem}
+.fs-customers{background:rgba(255,255,255,.95);border-radius:22px;padding:26px 34px;box-shadow:0 12px 30px rgba(15,37,64,.13);margin:26px 0 0 54px}
+@media (prefers-color-scheme: dark){ .fs-customers{background:rgba(18,37,62,.95)} }
+.fs-customers h3{font-size:.88rem;font-weight:900;letter-spacing:.05em;color:var(--brand);margin:0 0 12px;text-transform:uppercase}
+.fs-customers .cust-names{font-size:1.02rem;font-weight:700;color:var(--ink);line-height:1.9}
+.fs-customers p{margin:8px 0 0;color:var(--muted);font-size:.9rem}
+.fs-cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.fs-phone{font-weight:800;color:var(--ink-2);font-size:.95rem}
+.fs-phone a{color:var(--brand);font-weight:900}
+@media (max-width:760px){ .fs-official{margin-right:0} .fs-customers{margin-left:0;padding:22px 24px} }
 
 /* ---------- Photo backgrounds on every section: white bands pop over the photo ---------- */
 #services .svc{background:rgba(255,255,255,.95);box-shadow:0 12px 30px rgba(15,37,64,.13)}
@@ -256,6 +279,32 @@ html.js .band-list li:nth-child(even).reveal.in{animation-name:svcInR}
   .finder{background:rgba(18,37,62,.95)}
   .finder select{background:#1b365e}
   .finder-result{background:#1b365e}
+}
+
+/* ---------- Partnership page: customers & partners ---------- */
+[hidden]{display:none!important}
+.page-back{display:inline-flex;align-items:center;gap:7px;font-weight:800;font-size:.95rem;margin-bottom:26px;color:var(--brand)}
+.page-back:hover{color:var(--pink)}
+.cp-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.cp-list li{display:grid;grid-template-columns:minmax(210px,310px) minmax(0,1fr);gap:6px 30px;align-items:center;background:var(--surface);border-radius:22px;padding:26px 34px;box-shadow:0 12px 30px rgba(15,37,64,.13);transition:box-shadow .35s ease,transform .35s ease}
+.cp-list li:nth-child(odd){margin-right:54px}
+.cp-list li:nth-child(even){margin-left:54px}
+.cp-list li:hover{box-shadow:var(--shadow-lg)}
+.cp-list li:nth-child(odd):hover{transform:translateX(6px)}
+.cp-list li:nth-child(even):hover{transform:translateX(-6px)}
+.cp-list h3{font-size:1.12rem;font-weight:900;margin:0;line-height:1.45}
+.cp-list h3 span{display:block;font-size:.88rem;font-weight:700;color:var(--muted);margin-top:2px}
+.cp-list p{margin:0;color:var(--muted);font-size:.95rem;max-width:38rem}
+html.js .cp-list li.reveal.in{animation:svcInL 1s cubic-bezier(.22,.61,.36,1) both}
+html.js .cp-list li:nth-child(even).reveal.in{animation-name:svcInR}
+@media (max-width:1020px){
+  .cp-list li{grid-template-columns:minmax(180px,250px) minmax(0,1fr);padding:24px 28px;gap:6px 24px}
+  .cp-list li:nth-child(odd){margin-right:26px}
+  .cp-list li:nth-child(even){margin-left:26px}
+}
+@media (max-width:760px){
+  .cp-list li{grid-template-columns:1fr;padding:22px 24px}
+  .cp-list li:nth-child(odd),.cp-list li:nth-child(even){margin-left:0;margin-right:0}
 }
 
 /* ---------- WhatsApp demo ---------- */
@@ -382,10 +431,12 @@ html.js .why:nth-child(even).reveal.in{animation-name:svcInR}
 
 /* ---------- Contact ---------- */
 #contact{background:var(--surface-2)}
-.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:start}
-.contact-info h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:900;margin-bottom:14px}
-.contact-info p{color:var(--muted);margin:0 0 26px}
-.info-row{display:flex;gap:15px;padding:20px 22px;border:none;background:var(--surface);border-radius:20px;margin-bottom:14px}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:stretch}
+.contact-info{display:flex;flex-direction:column;gap:14px;height:100%}
+.contact-info h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:900;margin-bottom:0}
+.contact-info p{color:var(--muted);margin:0 0 12px}
+.info-row{display:flex;gap:15px;padding:20px 22px;border:none;background:var(--surface);border-radius:20px;margin-bottom:0;flex:1 1 0;align-items:center;width:100%}
+.form-card{height:100%}
 .info-row .ic{width:44px;height:44px;border-radius:50%;background:var(--brand-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .info-row .ic svg{width:21px;height:21px;stroke:var(--brand)}
 .info-row b{display:block;font-size:.98rem}
@@ -482,6 +533,7 @@ html.js .reveal.in{animation:revealIn .95s cubic-bezier(.22,.61,.36,1) both}
       <a href="#whatsapp" data-i18n="nav_whatsapp">AI WhatsApp 客服</a>
       <a href="#custom" data-i18n="nav_custom">訂製方案</a>
       <a href="#feishu" data-i18n="nav_feishu">飛書</a>
+      <a href="products.html" data-i18n="nav_products">Partnership</a>
       <a href="#repair" data-i18n="nav_repair">售後維修</a>
       <a href="#faq" data-i18n="nav_faq">常見問題</a>
     </nav>
@@ -501,6 +553,7 @@ html.js .reveal.in{animation:revealIn .95s cubic-bezier(.22,.61,.36,1) both}
     <a href="#whatsapp" data-i18n="nav_whatsapp">AI WhatsApp 客服</a>
     <a href="#custom" data-i18n="nav_custom">訂製方案</a>
     <a href="#feishu" data-i18n="nav_feishu">飛書</a>
+    <a href="products.html" data-i18n="nav_products">Partnership</a>
     <a href="#repair" data-i18n="nav_repair">售後維修</a>
     <a href="#faq" data-i18n="nav_faq">常見問題</a>
     <a href="#contact" data-i18n="nav_cta">免費諮詢</a>
@@ -704,13 +757,36 @@ html.js .reveal.in{animation:revealIn .95s cubic-bezier(.22,.61,.36,1) both}
       <h2 data-i18n-html="fs_h2">飛書 Feishu / Lark — <span class="hl">由開通到用熟</span>，一站式代理</h2>
       <p data-i18n="fs_p">飛書集即時通訊、文件協作、視像會議、多維表格與審批於一身。作為代理，我們不單幫你開通帳戶，更會按你的工作流程完成設定與培訓，令團隊真正用得起來。</p>
     </div>
+    <div class="fs-official reveal">
+      <span class="badge-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+      <div><b data-i18n="fs_official_t">飛書 / Lark 官方經銷商</b><p data-i18n="fs_official_p">interFace Technology 現已成為 Feishu 及 Lark 的官方經銷商，品質保證，值得信賴 — 為你的團隊帶來新世代一站式協作體驗。</p></div>
+    </div>
     <ul class="band-list">
       <li class="reveal"><span class="n">1</span><h3 data-i18n="fs_f1t">開通與部署</h3><p data-i18n="fs_f1p">企業帳戶開通、組織架構與權限設定、域名與安全策略配置。</p></li>
       <li class="reveal"><span class="n">2</span><h3 data-i18n="fs_f2t">流程搭建</h3><p data-i18n="fs_f2p">多維表格（Base）應用、審批流程、自動提醒與報表，按你的業務場景度身搭建。</p></li>
       <li class="reveal"><span class="n">3</span><h3 data-i18n="fs_f3t">AI 整合</h3><p data-i18n="fs_f3p">將 AI 助手接入飛書：智能回覆、會議紀要整理、文件摘要與知識庫搜尋。</p></li>
       <li class="reveal"><span class="n">4</span><h3 data-i18n="fs_f4t">培訓與支援</h3><p data-i18n="fs_f4p">管理員與員工培訓、上手指南，以及日常使用問題的持續支援。</p></li>
     </ul>
-    <div class="band-cta reveal"><a class="btn btn-primary" href="#contact" data-i18n="fs_cta">查詢飛書方案</a></div>
+    <div class="fs-subhead reveal">
+      <h3 data-i18n="fs_why_h">點解揀 interFace 做你的飛書夥伴？</h3>
+      <p data-i18n="fs_why_p">你最值得信賴的本地合作夥伴 — 專業 IT 解決方案提供商，為企業提供全方位數碼化轉型服務。</p>
+    </div>
+    <ul class="band-list">
+      <li class="reveal"><span class="n">1</span><h3 data-i18n="fs_w1t">本地專業支援</h3><p data-i18n="fs_w1p">我們提供本地化的粵語及國語技術支援和客戶服務，確保你能快速解決任何問題。</p></li>
+      <li class="reveal"><span class="n">2</span><h3 data-i18n="fs_w2t">無縫整合服務</h3><p data-i18n="fs_w2p">憑藉我們在 IT 基礎設施和雲端解決方案領域的豐富經驗，協助你將飛書 / Lark 與現有系統無縫整合。</p></li>
+      <li class="reveal"><span class="n">3</span><h3 data-i18n="fs_w3t">度身訂造方案</h3><p data-i18n="fs_w3p">專家團隊深入了解你的業務需求，為你提供最合適的部署方案和培訓，確保團隊充分利用平台的所有功能。</p></li>
+      <li class="reveal"><span class="n">4</span><h3 data-i18n="fs_w4t">一站式 IT 服務</h3><p data-i18n="fs_w4p">除協作平台外，我們還提供網絡安全、雲端服務和託管服務等全方位 IT 解決方案，成為你業務數碼化轉型的堅實後盾。</p></li>
+    </ul>
+    <div class="fs-customers reveal">
+      <h3 data-i18n="fs_cust_t">我們的客戶 Our Customers</h3>
+      <div class="cust-names" data-i18n="fs_cust_list">Amiche International Group Limited · 香港拂山能源科技有限公司 (Novva Group) · THE SPACE VENUE LIMITED · VR Limited · TNT · APEX ACCOUNTING · KNQ Technology Limited</div>
+      <p data-i18n="fs_cust_p">以上團隊已選用飛書 / Lark 提升協作效率 — 你的團隊都可以。</p>
+    </div>
+    <div class="band-cta reveal fs-cta-row">
+      <a class="btn btn-primary" href="#contact" data-i18n="fs_cta">查詢飛書方案</a>
+      <a class="btn btn-outline-w" href="https://www.interface-tech.com.hk/feishuandlark" target="_blank" rel="noopener" data-i18n="fs_orig">飛書專頁原文 ↗</a>
+      <span class="fs-phone"><span data-i18n="fs_phone_t">飛書查詢：</span> <a href="tel:+85295879376">852-9587 9376</a></span>
+    </div>
   </div>
 </section>
 
@@ -827,7 +903,11 @@ html.js .reveal.in{animation:revealIn .95s cubic-bezier(.22,.61,.36,1) both}
         </div>
         <div class="info-row">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2Z"/></svg></span>
-          <div><b data-i18n="phone_label">電話</b><span style="display:block"><a href="tel:+85221539344" style="color:var(--muted)">00852 2153 9344</a></span></div>
+          <div><b data-i18n="phone_label">總機 General Line</b><span style="display:block"><a href="tel:+85228878820" style="color:var(--ink-2);font-weight:700;font-size:1.02rem">+852 2887 8820</a></span></div>
+        </div>
+        <div class="info-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+          <div><b data-i18n="email_label">電郵 Email</b><span style="display:block"><a href="mailto:info@interface-tech.com.hk" style="color:var(--muted)">info@interface-tech.com.hk</a></span></div>
         </div>
         <div class="info-row">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></span>
@@ -846,17 +926,19 @@ html.js .reveal.in{animation:revealIn .95s cubic-bezier(.22,.61,.36,1) both}
             <div class="field full"><label for="fMsg" data-i18n="fm_msg">想了解的內容</label><textarea id="fMsg"></textarea></div>
           </div>
           <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-            <button class="btn btn-primary" type="submit" data-i18n="fm_btn">整理我的查詢</button>
-            <span style="font-size:.85rem;color:var(--muted)" data-i18n="fm_hint">整理後可一鍵複製，再貼到 WhatsApp / 電郵傳給我們</span>
+            <button class="btn btn-primary" type="submit" data-i18n="fm_btn">以電郵寄出查詢</button>
+            <span style="font-size:.85rem;color:var(--muted)" data-i18n="fm_hint">㩒掣會自動開你的電郵 App，收件人、主旨同內容已預填好，㩒 Send 即寄到</span>
           </div>
         </form>
         <div class="summary-box" id="summaryBox">
           <h4 data-i18n="fm_sum_t">你的查詢內容（可直接傳送）</h4>
           <pre id="summaryText"></pre>
           <div class="summary-actions">
+            <a class="btn btn-primary" id="mailBtn" href="mailto:info@interface-tech.com.hk" data-i18n="fm_mail">用電郵寄出 →</a>
             <button class="btn btn-green" id="copyBtn" type="button" data-i18n="fm_copy">複製查詢內容</button>
             <span class="copied-msg" id="copiedMsg" hidden data-i18n="fm_copied">已複製 ✓</span>
           </div>
+          <p style="margin:12px 0 0;font-size:.85rem;color:var(--muted)" data-i18n="fm_mail_note">電郵會寄去 info@interface-tech.com.hk；如果電郵 App 冇自動打開，㩒上面「用電郵寄出」，或者複製內容貼去 WhatsApp。</p>
         </div>
       </div>
     </div>
@@ -877,7 +959,8 @@ html.js .reveal.in{animation:revealIn .95s cubic-bezier(.22,.61,.36,1) both}
         <p style="margin-top:16px;font-size:.88rem">
           <span data-i18n="addr_main">葵昌路41-49號及大連排道58-66號樂聲工業中心 21A</span><br/>
           <span style="opacity:.75" data-i18n="addr_sub">UNIT A, 21/F, BLOCK A, ROXY INDUSTRIAL CENTRE, 58-66 TAI LIN PAI ROAD, KWAI CHUNG, HONG KONG</span><br/>
-          <a href="tel:+85221539344" style="color:var(--muted)">00852 2153 9344</a>
+          <span data-i18n="phone_label">總機 General Line</span>: <a href="tel:+85228878820" style="color:var(--muted);font-weight:700">+852 2887 8820</a><br/>
+          <span data-i18n="email_label">電郵 Email</span>: <a href="mailto:info@interface-tech.com.hk" style="color:var(--muted)">info@interface-tech.com.hk</a>
         </p>
       </div>
       <div>
@@ -894,6 +977,7 @@ html.js .reveal.in{animation:revealIn .95s cubic-bezier(.22,.61,.36,1) both}
         <h4 data-i18n="ft_link">快速連結</h4>
         <ul>
           <li><a href="#process" data-i18n="pr_kicker">合作流程</a></li>
+          <li><a href="products.html" data-i18n="nav_products">Partnership</a></li>
           <li><a href="#faq" data-i18n="nav_faq">常見問題</a></li>
           <li><a href="#contact" data-i18n="ct_kicker">聯絡我們</a></li>
           <li><a href="https://www.interface-tech.com.hk/" target="_blank" rel="noopener" data-i18n="ft_old">現行官方網站</a></li>
@@ -914,7 +998,7 @@ var state = { lang:"en", ucIndex:0, fdDone:false};
 
 var I18N = {
 zh:{
-nav_services:"服務", nav_whatsapp:"AI WhatsApp 客服", nav_custom:"訂製方案", nav_feishu:"飛書", nav_repair:"售後維修", nav_faq:"常見問題", nav_cta:"免費諮詢",
+nav_services:"服務", nav_products:"Partnership 合作夥伴", nav_whatsapp:"AI WhatsApp 客服", nav_custom:"訂製方案", nav_feishu:"飛書", nav_repair:"售後維修", nav_faq:"常見問題", nav_cta:"免費諮詢",
 hero_badge:"香港企業 AI 解決方案夥伴",
 hero_h1:"將 AI 落地到<br/>你的<span class=\"hl\">日常業務</span>",
 hero_lead:"interFace Technology 專為香港企業訂製 AI 方案 — 由 AI WhatsApp 客戶服務、流程自動化到飛書協作整合，一個團隊由顧問、開發、部署到售後維修，全程跟進。",
@@ -945,12 +1029,19 @@ wa_demo_name:"interFace AI 客服（示範）", wa_demo_online:"在線 · 即時
 wa_note:"↑ 互動示範：點選問題，體驗 AI 客服的回覆方式",
 cu_kicker:"訂製 AI 方案", cu_h2:"按行業痛點，<span class=\"hl\">設計你的 AI</span>", cu_p:"選擇你的行業，看看常見痛點可以怎樣用訂製 AI 解決 — 每個方案都由顧問按你的實際流程再細化。",
 fs_kicker:"飛書代理", fs_h2:"飛書 Feishu / Lark — <span class=\"hl\">由開通到用熟</span>，一站式代理",
-fs_p:"飛書集即時通訊、文件協作、視像會議、多維表格與審批於一身。作為代理，我們不單幫你開通帳戶，更會按你的工作流程完成設定與培訓，令團隊真正用得起來。",
+fs_p:"飛書 / Lark 是新世代一站式協作平台，整合即時通訊、日曆、雲端文件、視像會議、多維表格、審批與自動化工作流程，並內置強大 AI 功能。在瞬息萬變的商業環境中，它能簡化日常工作、激發團隊創新 — 無論團隊身在何處，都能無縫溝通、高效協作。作為代理，我們不單幫你開通帳戶，更會按你的工作流程完成設定、整合與培訓，令團隊真正用得起來。",
+fs_official_t:"飛書 / Lark 官方經銷商", fs_official_p:"interFace Technology 現已成為 Feishu 及 Lark 的官方經銷商，品質保證，值得信賴 — 為你的團隊帶來前所未有的工作效率和協作體驗，釋放團隊潛力，迎接智能工作新時代。",
 fs_f1t:"開通與部署", fs_f1p:"企業帳戶開通、組織架構與權限設定、域名與安全策略配置。",
 fs_f2t:"流程搭建", fs_f2p:"多維表格（Base）應用、審批流程、自動提醒與報表，按你的業務場景度身搭建。",
 fs_f3t:"AI 整合", fs_f3p:"將 AI 助手接入飛書：智能回覆、會議紀要整理、文件摘要與知識庫搜尋。",
 fs_f4t:"培訓與支援", fs_f4p:"管理員與員工培訓、上手指南，以及日常使用問題的持續支援。",
-fs_cta:"查詢飛書方案", fs_img_alt:"客服團隊戴上耳機，在辦公室以電腦回覆客戶查詢",
+fs_why_h:"點解揀 interFace 做你的飛書夥伴？", fs_why_p:"你最值得信賴的本地合作夥伴 — 專業 IT 解決方案提供商，為企業提供全方位數碼化轉型服務。選擇 interFace Technology 作為你的 Feishu / Lark 服務供應商，你將獲得：",
+fs_w1t:"本地專業支援", fs_w1p:"我們提供本地化的粵語及國語技術支援和客戶服務，確保你能快速解決任何問題。",
+fs_w2t:"無縫整合服務", fs_w2p:"憑藉我們在 IT 基礎設施和雲端解決方案領域的豐富經驗，我們可以協助你將飛書 / Lark 與現有系統無縫整合。",
+fs_w3t:"度身訂造方案", fs_w3p:"我們的專家團隊會深入了解你的業務需求，為你提供最合適的部署方案和培訓，確保你的團隊能充分利用平台的所有功能。",
+fs_w4t:"一站式 IT 服務", fs_w4p:"除協作平台外，我們還提供網絡安全、雲端服務和託管服務等全方位 IT 解決方案，成為你業務數碼化轉型的堅實後盾。",
+fs_cust_t:"我們的客戶 Our Customers", fs_cust_list:"Amiche International Group Limited · 香港拂山能源科技有限公司 (Novva Group) · THE SPACE VENUE LIMITED · VR Limited · TNT · APEX ACCOUNTING · KNQ Technology Limited", fs_cust_p:"以上團隊已選用飛書 / Lark 提升協作效率 — 準備好提升你團隊的協作效率未？立即聯繫我們的解決方案顧問，獲取免費產品演示和專業諮詢。",
+fs_cta:"查詢飛書方案", fs_orig:"飛書專頁原文 ↗", fs_phone_t:"飛書查詢：", fs_img_alt:"客服團隊戴上耳機，在辦公室以電腦回覆客戶查詢",
 rp_kicker:"售後維修", rp_h2:"賣得出，更要跟得到 — <span class=\"hl-pink\">專業售後維修</span>",
 rp_p:"售後服務是 interFace Technology 的起家專業。由互動顯示屏、視像會議系統到自助終端與數碼標牌，我們的技術團隊提供檢測、維修與保養，令設備長用長有。",
 rp_f1t:"故障檢測與報價", rp_f1p:"先檢測、後報價，清楚列明問題與維修方案，確認後才動工。",
@@ -980,18 +1071,26 @@ ct_kicker:"聯絡我們", ct_h2:"傾下你的 <span class=\"hl\">AI 計劃</span
 addr_label:"公司地址",
 addr_main:"葵昌路41-49號及大連排道58-66號樂聲工業中心 21A",
 addr_sub:"UNIT A, 21/F, BLOCK A, ROXY INDUSTRIAL CENTRE, 58-66 TAI LIN PAI ROAD, KWAI CHUNG, HONG KONG",
-addr_map:"在 Google 地圖開啟 →", phone_label:"電話", web_label:"官方網站",
+addr_map:"在 Google 地圖開啟 →", phone_label:"總機 General Line", email_label:"電郵 Email", web_label:"官方網站",
 fm_name:"你的姓名 *", fm_company:"公司名稱", fm_contact:"聯絡電話 / 電郵 *", fm_service:"查詢服務", fm_msg:"想了解的內容",
-fm_btn:"整理我的查詢", fm_hint:"整理後可一鍵複製，再貼到 WhatsApp / 電郵傳給我們",
-fm_sum_t:"你的查詢內容（可直接傳送）", fm_copy:"複製查詢內容", fm_copied:"已複製 ✓",
+fm_btn:"以電郵寄出查詢", fm_hint:"㩒掣會自動開你的電郵 App — 收件人 info@interface-tech.com.hk、主旨同內容已預填好你的資料，㩒 Send 即寄到；亦可喺下面複製內容貼去 WhatsApp",
+fm_sum_t:"你的查詢內容（已為你開電郵，可再核對）", fm_mail:"用電郵寄出 →", fm_mail_note:"電郵會寄去 info@interface-tech.com.hk；如果電郵 App 冇自動打開，㩒上面「用電郵寄出」，或者複製內容貼去 WhatsApp。", fm_copy:"複製查詢內容（貼去 WhatsApp）", fm_copied:"已複製 ✓",
 ft_blurb:"香港 AI 解決方案公司：訂製 AI、AI WhatsApp 客服、飛書代理與售後維修，一個團隊全程負責。",
 ft_svc:"服務", ft_link:"快速連結", ft_old:"現行官方網站",
 ft_copy:"© 2026 interFace Technology. 版權所有。", ft_tag:"Services in Live — 以服務連繫人與科技",
 uc_h_pain:"常見痛點", uc_h_sol:"AI 點幫手", uc_h_del:"交付成果",
-fd_rec:"建議起步方案", fd_cta:"就此方案免費諮詢 →", fd_default_t:"等你揀選", fd_default_p:"在左邊選擇行業與痛點，再按「查看建議方案」，這裡會顯示最適合你的起步建議。"
+fd_rec:"建議起步方案", fd_cta:"就此方案免費諮詢 →", fd_default_t:"等你揀選", fd_default_p:"在左邊選擇行業與痛點，再按「查看建議方案」，這裡會顯示最適合你的起步建議。",
+pd_back:"← 返回主頁", pd_kicker:"Partnership・合作夥伴",
+pd_h2:"與我們同行的<span class=\"hl\">客戶與合作夥伴</span>",
+pd_p:"由環球物流、航空到時裝零售與醫療科技，多家領先機構選用 interFace Technology 的服務；我們亦與世界級科技夥伴合作，為客戶帶來完整方案。方案按項目報價，歡迎查詢。",
+pd_cust_h:"主要客戶 Key Customers", pd_cust_p:"信任 interFace Technology 技術與服務的機構。",
+pd_c1:"國際快遞及物流", pd_c2:"香港的國際航空樞紐", pd_c3:"快遞及物流服務", pd_c4:"網上奢侈品時裝零售", pd_c5:"家用科技及電器", pd_c6:"醫療科技",
+pd_part_kicker:"合作夥伴", pd_part_h:"主要<span class=\"hl\">合作夥伴</span> Key Partners", pd_part_p:"與我們攜手為客戶提供完整方案的科技與渠道夥伴。",
+pd_p1:"網絡、協作及視像會議方案", pd_p2:"IT 產品分銷", pd_p3:"科技方案合作夥伴", pd_p4:"顯示及協作科技", pd_p5:"運輸及物流服務", pd_p6:"創意服務合作夥伴", pd_p7:"一站式協作平台（飛書國際版）", pd_p8:"一站式協作平台 — 即時通訊、日曆、雲文件、視像會議與 AI 功能", pd_p9:"雲端、AI 及數碼體驗服務",
+pd_cta:"傾下你的項目 →", pd_orig:"舊網站 Partnership 頁 ↗"
 },
 en:{
-nav_services:"Services", nav_whatsapp:"AI WhatsApp CS", nav_custom:"Custom AI", nav_feishu:"Feishu", nav_repair:"Maintenance", nav_faq:"FAQ", nav_cta:"Free Consultation",
+nav_services:"Services", nav_products:"Partnership", nav_whatsapp:"AI WhatsApp CS", nav_custom:"Custom AI", nav_feishu:"Feishu", nav_repair:"Maintenance", nav_faq:"FAQ", nav_cta:"Free Consultation",
 hero_badge:"AI Solutions Partner for Hong Kong Businesses",
 hero_h1:"Bring AI into<br/>your <span class=\"hl\">daily business</span>",
 hero_lead:"interFace Technology builds custom AI solutions for Hong Kong companies — from AI WhatsApp customer service and workflow automation to Feishu collaboration, with one team covering consulting, development, deployment and after-sales maintenance.",
@@ -1022,12 +1121,19 @@ wa_demo_name:"interFace AI Agent (Demo)", wa_demo_online:"Online · replies inst
 wa_note:"↑ Interactive demo: tap a question and see how the AI replies",
 cu_kicker:"Custom AI Solutions", cu_h2:"AI designed around <span class=\"hl\">your industry's pain points</span>", cu_p:"Pick your industry to see how common pain points can be solved with custom AI — every solution is then refined by our consultants around your actual workflow.",
 fs_kicker:"Feishu Reseller", fs_h2:"Feishu / Lark — <span class=\"hl\">from onboarding to mastery</span>, one partner",
-fs_p:"Feishu brings messaging, document collaboration, video meetings, Base and approvals into one platform. As your reseller partner, we go beyond account setup: we configure it around your workflows and train your team until it truly sticks.",
+fs_p:"Feishu / Lark is the next-generation all-in-one collaboration platform — messaging, calendar, cloud documents, video meetings, Base, approvals and automated workflows in one place, powered by built-in AI. In a fast-changing business environment it simplifies daily work and unlocks your team's potential, with seamless collaboration wherever your team works. As your reseller partner, we go beyond account setup: we configure it around your workflows, integrate it with your systems and train your team until it truly sticks.",
+fs_official_t:"Official Feishu / Lark Reseller", fs_official_p:"interFace Technology is now an official reseller of Feishu and Lark — quality assured and trusted. We bring your team a new era of smart work, with unprecedented efficiency and collaboration.",
 fs_f1t:"Onboarding & deployment", fs_f1p:"Company account setup, org structure and permissions, domain and security policy configuration.",
 fs_f2t:"Workflow building", fs_f2p:"Base applications, approval flows, automated reminders and reports, built for your business scenarios.",
 fs_f3t:"AI integration", fs_f3p:"Bring AI assistants into Feishu: smart replies, meeting notes, document summaries and knowledge search.",
 fs_f4t:"Training & support", fs_f4p:"Admin and staff training, onboarding guides, and ongoing support for everyday questions.",
-fs_cta:"Ask about Feishu plans", fs_img_alt:"Customer service team wearing headsets, answering enquiries on computers in an office",
+fs_why_h:"Why choose interFace as your Feishu partner?", fs_why_p:"Your trusted local partner — a professional IT solutions provider for end-to-end digital transformation. Choose interFace Technology as your Feishu / Lark provider and you get:",
+fs_w1t:"Local, professional support", fs_w1p:"Local technical support and customer service in Cantonese and Mandarin, so any issue is resolved quickly.",
+fs_w2t:"Seamless integration", fs_w2p:"With deep experience in IT infrastructure and cloud solutions, we integrate Feishu / Lark seamlessly with the systems you already use.",
+fs_w3t:"Tailored solutions", fs_w3p:"Our specialists study your business needs in depth and provide the right deployment plan and training, so your team uses every feature to its full potential.",
+fs_w4t:"One-stop IT services", fs_w4p:"Beyond the collaboration platform, we also provide cybersecurity, cloud and managed services — a solid backbone for your digital transformation.",
+fs_cust_t:"Our Customers", fs_cust_list:"Amiche International Group Limited · Novva Group (Hong Kong Fushan Energy Technology) · THE SPACE VENUE LIMITED · VR Limited · TNT · APEX ACCOUNTING · KNQ Technology Limited", fs_cust_p:"These teams already use Feishu / Lark to work more efficiently — ready to lift your team's collaboration? Contact our solution consultants for a free product demo and professional advice.",
+fs_cta:"Ask about Feishu plans", fs_orig:"Original Feishu page ↗", fs_phone_t:"Feishu enquiries:", fs_img_alt:"Customer service team wearing headsets, answering enquiries on computers in an office",
 rp_kicker:"After-sales Maintenance", rp_h2:"Sold by us, supported by us — <span class=\"hl-pink\">professional maintenance</span>",
 rp_p:"After-sales service is the craft interFace Technology was founded on. From interactive displays and video conferencing systems to self-service terminals and digital signage, our technicians keep your equipment running for years.",
 rp_f1t:"Diagnosis & quotation first", rp_f1p:"We diagnose first and quote clearly — work only starts after your approval.",
@@ -1057,15 +1163,23 @@ ct_kicker:"Contact Us", ct_h2:"Let's talk about <span class=\"hl\">your AI plan<
 addr_label:"Office Address",
 addr_main:"UNIT A, 21/F, BLOCK A, ROXY INDUSTRIAL CENTRE, 58-66 TAI LIN PAI ROAD, KWAI CHUNG, HONG KONG",
 addr_sub:"葵昌路41-49號及大連排道58-66號樂聲工業中心 21A",
-addr_map:"Open in Google Maps →", phone_label:"Phone", web_label:"Official Website",
+addr_map:"Open in Google Maps →", phone_label:"General Line", email_label:"Email", web_label:"Official Website",
 fm_name:"Your name *", fm_company:"Company name", fm_contact:"Phone / Email *", fm_service:"Service of interest", fm_msg:"What would you like to know?",
-fm_btn:"Prepare my enquiry", fm_hint:"You can then copy it in one tap and paste it into WhatsApp or email to reach us",
-fm_sum_t:"Your enquiry (ready to send)", fm_copy:"Copy enquiry", fm_copied:"Copied ✓",
+fm_btn:"Prepare my enquiry", fm_hint:"The button opens your email app with the recipient (info@interface-tech.com.hk), subject and your details pre-filled — just press Send. You can also copy the text below for WhatsApp.",
+fm_sum_t:"Your enquiry (your email app has been opened — or send from here)", fm_mail:"Send by email →", fm_mail_note:"Your email goes to info@interface-tech.com.hk. If your email app did not open automatically, tap “Send by email” above, or copy the text and paste it into WhatsApp.", fm_copy:"Copy enquiry (for WhatsApp)", fm_copied:"Copied ✓",
 ft_blurb:"Hong Kong AI solutions company: custom AI, AI WhatsApp customer service, Feishu reseller services and after-sales maintenance — one team, end to end.",
 ft_svc:"Services", ft_link:"Quick Links", ft_old:"Current official website",
 ft_copy:"© 2026 interFace Technology. All rights reserved.", ft_tag:"Services in Live — connecting people and technology through service",
 uc_h_pain:"Common pain points", uc_h_sol:"How AI helps", uc_h_del:"What you receive",
-fd_rec:"Recommended starting point", fd_cta:"Free consultation on this →", fd_default_t:"Make your picks", fd_default_p:"Choose an industry and a pain point on the left, then tap “Show my recommendation” to see your best starting point here."
+fd_rec:"Recommended starting point", fd_cta:"Free consultation on this →", fd_default_t:"Make your picks", fd_default_p:"Choose an industry and a pain point on the left, then tap “Show my recommendation” to see your best starting point here.",
+pd_back:"← Back to home", pd_kicker:"Partnership · Customers & Partners",
+pd_h2:"The customers and partners <span class=\"hl\">behind our solutions</span>",
+pd_p:"From global logistics and aviation to fashion retail and medical technology, leading organisations rely on interFace Technology — and we work with world-class technology partners to deliver complete solutions. All solutions are quoted per project; talk to us for a tailored quotation.",
+pd_cust_h:"Key Customers", pd_cust_p:"Organisations that trust interFace Technology for their technology and service needs.",
+pd_c1:"International express & logistics", pd_c2:"Hong Kong's international aviation hub", pd_c3:"Express delivery & logistics services", pd_c4:"Online luxury fashion retail", pd_c5:"Home technology & appliances", pd_c6:"Medical technology",
+pd_part_kicker:"Partners", pd_part_h:"Key <span class=\"hl\">Partners</span>", pd_part_p:"Technology and channel partners we work with to bring complete solutions to our customers.",
+pd_p1:"Networking, collaboration & video conferencing solutions", pd_p2:"IT product distribution", pd_p3:"Technology solutions partner", pd_p4:"Display & collaboration technology", pd_p5:"Shipping & logistics services", pd_p6:"Creative services partner", pd_p7:"All-in-one collaboration platform (the international edition of Feishu)", pd_p8:"All-in-one collaboration platform — messaging, calendar, cloud documents, video meetings and AI features", pd_p9:"Cloud, AI & digital experience services",
+pd_cta:"Talk to us about your project →", pd_orig:"Original Partnership page ↗"
 }};
 
 var CHECK = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:17px;height:17px;flex-shrink:0;margin-top:3px;stroke:var(--brand)\"><path d=\"M20 6 9 17l-5-5\"/></svg>";
@@ -1274,22 +1388,30 @@ var company = document.getElementById("fCompany").value.trim();
 var contact = document.getElementById("fContact").value.trim();
 var service = document.getElementById("fService").value;
 var msg = document.getElementById("fMsg").value.trim();
-var lines;
+var lines, subject;
 if(state.lang==="zh"){
-lines = ["","姓名："+name];
+subject = "網站查詢 — " + service + (name? " — " + name: "");
+lines = ["[網站查詢 — interFace Technology]","姓名："+name];
 if(company) lines.push("公司："+company);
 lines.push("聯絡："+contact, "查詢服務："+service);
 if(msg) lines.push("內容："+msg);
 } else {
+subject = "Website Enquiry — " + service + (name? " — " + name: "");
 lines = ["[Website Enquiry — interFace Technology]","Name: "+name];
 if(company) lines.push("Company: "+company);
 lines.push("Contact: "+contact, "Service: "+service);
 if(msg) lines.push("Message: "+msg);
 }
-document.getElementById("summaryText").textContent = lines.join("\n");
+var bodyText = lines.join("\n");
+document.getElementById("summaryText").textContent = bodyText;
+var mailto = "mailto:info@interface-tech.com.hk?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(bodyText);
+var mailBtn = document.getElementById("mailBtn");
+mailBtn.setAttribute("href", mailto);
 document.getElementById("summaryBox").classList.add("show");
 document.getElementById("copiedMsg").hidden = true;
 document.getElementById("summaryBox").scrollIntoView({behavior:"smooth", block:"nearest"});
+/* Open the visitor's own email app with recipient, subject and body pre-filled */
+setTimeout(function(){ mailBtn.click(); }, 60);
 });
 document.getElementById("copyBtn").addEventListener("click", function(){
 var text = document.getElementById("summaryText").textContent;
@@ -1341,6 +1463,7 @@ io.observe(el);
 document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); el.classList.add("settled");});
 }
 }
+
 
 applyLang();
 setupForm();
