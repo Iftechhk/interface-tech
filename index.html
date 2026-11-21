@@ -253,11 +253,12 @@ html.js .band-list li:nth-child(even).reveal.in{animation-name:svcInR}
 .fs-subhead{margin:44px 0 22px;max-width:760px}
 .fs-subhead h3{font-size:clamp(1.35rem,2.6vw,1.75rem);font-weight:900;margin:0 0 8px}
 .fs-subhead p{margin:0;color:var(--muted);font-size:.98rem}
-.fs-customers{background:rgba(255,255,255,.95);border-radius:22px;padding:26px 34px;box-shadow:0 12px 30px rgba(15,37,64,.13);margin:26px 0 0 54px}
+.fs-customers{display:block;text-decoration:none;background:rgba(255,255,255,.95);border-radius:22px;padding:26px 34px;box-shadow:0 12px 30px rgba(15,37,64,.13);margin:26px 0 0 54px;transition:transform .25s ease,box-shadow .25s ease}
+.fs-customers:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(15,37,64,.18)}
 @media (prefers-color-scheme: dark){ .fs-customers{background:rgba(18,37,62,.95)} }
 .fs-customers h3{font-size:.88rem;font-weight:900;letter-spacing:.05em;color:var(--brand);margin:0 0 12px;text-transform:uppercase}
-.fs-customers .cust-names{font-size:1.02rem;font-weight:700;color:var(--ink);line-height:1.9}
-.fs-customers p{margin:8px 0 0;color:var(--muted);font-size:.9rem}
+.fs-customers p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.7}
+.fs-customers .cust-link{display:inline-block;margin-top:12px;font-size:1rem;font-weight:800;color:var(--brand)}
 .fs-cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .fs-phone{font-weight:800;color:var(--ink-2);font-size:.95rem}
 .fs-phone a{color:var(--brand);font-weight:900}
@@ -790,14 +791,13 @@ html.js .reveal.in{animation:revealIn .95s cubic-bezier(.22,.61,.36,1) both}
       <li class="reveal"><span class="n">3</span><h3 data-i18n="fs_w3t">度身訂造方案</h3><p data-i18n="fs_w3p">專家團隊深入了解你的業務需求，為你提供最合適的部署方案和培訓，確保團隊充分利用平台的所有功能。</p></li>
       <li class="reveal"><span class="n">4</span><h3 data-i18n="fs_w4t">一站式 IT 服務</h3><p data-i18n="fs_w4p">除協作平台外，我們還提供網絡安全、雲端服務和託管服務等全方位 IT 解決方案，成為你業務數碼化轉型的堅實後盾。</p></li>
     </ul>
-    <div class="fs-customers reveal">
+    <a class="fs-customers reveal" href="products.html">
       <h3 data-i18n="fs_cust_t">我們的客戶 Our Customers</h3>
-      <div class="cust-names" data-i18n="fs_cust_list">Amiche International Group Limited · 香港拂山能源科技有限公司 (Novva Group) · THE SPACE VENUE LIMITED · VR Limited · TNT · APEX ACCOUNTING · KNQ Technology Limited</div>
-      <p data-i18n="fs_cust_p">以上團隊已選用飛書 / Lark 提升協作效率 — 你的團隊都可以。</p>
-    </div>
+      <p data-i18n="fs_cust_p">多家機構已選用飛書 / Lark 提升協作效率 — 㩒入去睇晒全部客戶名單。</p>
+      <span class="cust-link" data-i18n="fs_cust_link">查看全部客戶 →</span>
+    </a>
     <div class="band-cta reveal fs-cta-row">
       <a class="btn btn-primary" href="#contact" data-i18n="fs_cta">查詢飛書方案</a>
-      <a class="btn btn-outline-w" href="https://www.interface-tech.com.hk/feishuandlark" target="_blank" rel="noopener" data-i18n="fs_orig">飛書專頁原文 ↗</a>
       <span class="fs-phone"><span data-i18n="fs_phone_t">飛書查詢：</span> <a href="tel:+85295879376">852-9587 9376</a></span>
     </div>
   </div>
@@ -1054,8 +1054,8 @@ fs_w1t:"本地專業支援", fs_w1p:"我們提供本地化的粵語及國語技�
 fs_w2t:"無縫整合服務", fs_w2p:"憑藉我們在 IT 基礎設施和雲端解決方案領域的豐富經驗，我們可以協助你將飛書 / Lark 與現有系統無縫整合。",
 fs_w3t:"度身訂造方案", fs_w3p:"我們的專家團隊會深入了解你的業務需求，為你提供最合適的部署方案和培訓，確保你的團隊能充分利用平台的所有功能。",
 fs_w4t:"一站式 IT 服務", fs_w4p:"除協作平台外，我們還提供網絡安全、雲端服務和託管服務等全方位 IT 解決方案，成為你業務數碼化轉型的堅實後盾。",
-fs_cust_t:"我們的客戶 Our Customers", fs_cust_list:"Amiche International Group Limited · 香港拂山能源科技有限公司 (Novva Group) · THE SPACE VENUE LIMITED · VR Limited · TNT · APEX ACCOUNTING · KNQ Technology Limited", fs_cust_p:"以上團隊已選用飛書 / Lark 提升協作效率 — 準備好提升你團隊的協作效率未？立即聯繫我們的解決方案顧問，獲取免費產品演示和專業諮詢。",
-fs_cta:"查詢飛書方案", fs_orig:"飛書專頁原文 ↗", fs_phone_t:"飛書查詢：", fs_img_alt:"客服團隊戴上耳機，在辦公室以電腦回覆客戶查詢",
+fs_cust_t:"我們的客戶 Our Customers", fs_cust_p:"多家機構已選用飛書 / Lark 提升協作效率 — 㩒入去睇晒全部客戶名單。", fs_cust_link:"查看全部客戶 →",
+fs_cta:"查詢飛書方案", fs_phone_t:"飛書查詢：", fs_img_alt:"客服團隊戴上耳機，在辦公室以電腦回覆客戶查詢",
 rp_kicker:"售後維修", rp_h2:"賣得出，更要跟得到 — <span class=\"hl-pink\">專業售後維修</span>",
 rp_p:"售後服務是 interFace Technology 的起家專業。由互動顯示屏、視像會議系統到自助終端與數碼標牌，我們的技術團隊提供檢測、維修與保養，令設備長用長有。",
 rp_f1t:"故障檢測與報價", rp_f1p:"先檢測、後報價，清楚列明問題與維修方案，確認後才動工。",
@@ -1147,8 +1147,8 @@ fs_w1t:"Local, professional support", fs_w1p:"Local technical support and custom
 fs_w2t:"Seamless integration", fs_w2p:"With deep experience in IT infrastructure and cloud solutions, we integrate Feishu / Lark seamlessly with the systems you already use.",
 fs_w3t:"Tailored solutions", fs_w3p:"Our specialists study your business needs in depth and provide the right deployment plan and training, so your team uses every feature to its full potential.",
 fs_w4t:"One-stop IT services", fs_w4p:"Beyond the collaboration platform, we also provide cybersecurity, cloud and managed services — a solid backbone for your digital transformation.",
-fs_cust_t:"Our Customers", fs_cust_list:"Amiche International Group Limited · Novva Group (Hong Kong Fushan Energy Technology) · THE SPACE VENUE LIMITED · VR Limited · TNT · APEX ACCOUNTING · KNQ Technology Limited", fs_cust_p:"These teams already use Feishu / Lark to work more efficiently — ready to lift your team's collaboration? Contact our solution consultants for a free product demo and professional advice.",
-fs_cta:"Ask about Feishu plans", fs_orig:"Original Feishu page ↗", fs_phone_t:"Feishu enquiries:", fs_img_alt:"Customer service team wearing headsets, answering enquiries on computers in an office",
+fs_cust_t:"Our Customers", fs_cust_p:"Many organisations already use Feishu / Lark to work more efficiently — tap to see the full customer list.", fs_cust_link:"See all our customers →",
+fs_cta:"Ask about Feishu plans", fs_phone_t:"Feishu enquiries:", fs_img_alt:"Customer service team wearing headsets, answering enquiries on computers in an office",
 rp_kicker:"After-sales Maintenance", rp_h2:"Sold by us, supported by us — <span class=\"hl-pink\">professional maintenance</span>",
 rp_p:"After-sales service is the craft interFace Technology was founded on. From interactive displays and video conferencing systems to self-service terminals and digital signage, our technicians keep your equipment running for years.",
 rp_f1t:"Diagnosis & quotation first", rp_f1p:"We diagnose first and quote clearly — work only starts after your approval.",
