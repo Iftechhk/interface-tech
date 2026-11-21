@@ -101,13 +101,13 @@ nav.main a:hover{color:var(--brand);background:var(--brand-soft)}
 .lang-switch button.active{background:var(--brand);color:#fff}
 @media (prefers-color-scheme: dark){ .lang-switch button.active{color:#13141f} }
 .header-cta{white-space:nowrap;padding:11px 20px;font-size:.92rem;line-height:1}
+.menu-btn{display:none;border:1px solid var(--line);background:var(--surface);border-radius:50%;width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:2;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.menu-btn svg{width:22px;height:22px;stroke:var(--ink);pointer-events:none}
 @media (max-width:1120px){
   nav.main,.header-cta{display:none}
   .menu-btn{display:flex}
   .header-actions{margin-left:auto}
 }
-.menu-btn{display:none;border:1px solid var(--line);background:var(--surface);border-radius:50%;width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center}
-.menu-btn svg{width:22px;height:22px;stroke:var(--ink)}
 .mobile-nav{display:none;border-top:1px solid var(--line);padding:10px 20px 16px;background:var(--surface)}
 .mobile-nav.open{display:block}
 .mobile-nav a{display:block;padding:11px 6px;color:var(--ink);font-weight:700;border-bottom:1px solid var(--line)}
@@ -585,12 +585,14 @@ body{-webkit-text-size-adjust:100%}
 @media (max-width:760px){
   .wrap{padding:0 16px}
   .header-in{height:64px;gap:8px}
-  .logo{gap:8px;min-width:0}
+  .logo{gap:8px;min-width:0;flex:1 1 auto}
   .logo-img{height:37px;max-width:52px;padding:2px 4px;border-radius:8px}
-  .logo-text b{font-size:.92rem}
-  .header-actions{gap:8px}
+  .logo-text{min-width:0;overflow:hidden}
+  .logo-text b{font-size:.92rem;overflow:hidden;text-overflow:ellipsis}
+  .logo-text span{overflow:hidden;text-overflow:ellipsis}
+  .header-actions{gap:8px;flex-shrink:0}
   .lang-switch button{padding:5px 9px;font-size:.78rem}
-  .menu-btn{width:40px;height:40px;flex-shrink:0}
+  .menu-btn{width:44px;height:44px;flex-shrink:0}
   .mobile-nav{padding:8px 16px 14px}
   .mobile-nav a{padding:13px 6px;min-height:44px;display:flex;align-items:center}
   .hero-grid{padding:42px 16px 70px;gap:32px}
@@ -649,6 +651,15 @@ body{-webkit-text-size-adjust:100%}
   .svc:hover,.step:hover,.why:hover,.tab-panel>div:hover,.band-list li:hover,.cp-list li:hover,.feat-list li:hover{transform:none}
   .btn:hover{transform:none}
   .hero-visual:hover img,.split-media:hover img{transform:none}
+}
+
+/* Menu-button guarantee: whenever the main nav is hidden (any phone or
+   tablet width up to 1120px, portrait or landscape) the three-line menu
+   button must be rendered and tappable. Kept last in the stylesheet so no
+   earlier display rule can override it. */
+@media (max-width:1120px){
+  .menu-btn{display:flex}
+  .header-actions{flex-shrink:0}
 }
 </style>
 <style>nav.main a.nav-current{color:var(--brand);background:var(--brand-soft)}</style>
