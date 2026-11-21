@@ -535,11 +535,120 @@ html.js .reveal.in{animation:revealIn .95s cubic-bezier(.22,.61,.36,1) both}
   .contact-grid{grid-template-columns:1fr;gap:36px}
   .form-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr;gap:32px}
-  .hero-grid{padding:56px 0 84px}
+  .hero-grid{padding:56px 16px 84px}
   .hero::before{width:480px;height:480px;right:-200px;top:-200px}
   .float-card{display:none}
   .finder{padding:30px 24px}
   .phone-screen{height:520px}
+}
+
+/* ================= Responsive refinement: tablet + phone =================
+   Desktop (>1080px) is untouched. Tablets (761–1080px, iPad portrait and
+   landscape) use their width with two-column layouts instead of a stretched
+   phone layout. Phones (<=760px) get a compact one-row header, full-width
+   actions and no sideways overflow. */
+html,body{overflow-x:clip}
+body{-webkit-text-size-adjust:100%}
+.field input,.field select,.field textarea,.finder select{font-size:16px}
+
+/* ---------- Tablet: 761px – 1080px ---------- */
+@media (min-width:761px) and (max-width:1080px){
+  .wrap{padding:0 28px}
+  .section{padding:72px 0}
+  .header-in{gap:12px}
+  .hero-grid{grid-template-columns:1.04fr .96fr;gap:36px;padding:64px 28px 88px}
+  .hero h1{font-size:clamp(2rem,4.4vw,2.65rem);margin:20px 0 16px}
+  .hero p.lead{font-size:1.01rem;margin-bottom:26px}
+  .hero-badge{font-size:.82rem}
+  .hero-points{gap:10px 16px;margin-top:28px}
+  .hero-points div{max-width:11.8rem;font-size:.88rem}
+  .float-card{padding:10px 13px;font-size:.8rem}
+  .float-1{left:2px;bottom:22px}
+  .float-2{right:2px;top:18px}
+  .split{gap:36px}
+  .finder{grid-template-columns:1fr 1fr;gap:28px;padding:34px}
+  .contact-grid{grid-template-columns:.95fr 1.05fr;gap:32px}
+  .form-card{padding:28px}
+  .footer-grid{grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+  .strip-in{gap:12px 26px}
+  .logo-grid{gap:16px}
+  .logo-grid li{height:158px;min-height:158px;padding:24px 28px}
+  .logo-grid img{height:96px;max-height:96px}
+}
+/* wider tablets: service bands get the feature box back beside the text */
+@media (min-width:900px) and (max-width:1080px){
+  .svc{grid-template-columns:84px minmax(0,1fr) minmax(0,.92fr)}
+  .svc-feats{grid-column:auto}
+}
+
+/* ---------- Phone: <=760px ---------- */
+@media (max-width:760px){
+  .wrap{padding:0 16px}
+  .header-in{height:64px;gap:8px}
+  .logo{gap:8px;min-width:0}
+  .logo-img{height:37px;max-width:52px;padding:2px 4px;border-radius:8px}
+  .logo-text b{font-size:.92rem}
+  .header-actions{gap:8px}
+  .lang-switch button{padding:5px 9px;font-size:.78rem}
+  .menu-btn{width:40px;height:40px;flex-shrink:0}
+  .mobile-nav{padding:8px 16px 14px}
+  .mobile-nav a{padding:13px 6px;min-height:44px;display:flex;align-items:center}
+  .hero-grid{padding:42px 16px 70px;gap:32px}
+  .hero h1{font-size:clamp(1.88rem,8.4vw,2.3rem);margin:18px 0 14px;line-height:1.25}
+  .hero-badge{max-width:100%;font-size:.8rem;line-height:1.45;padding:7px 13px;white-space:normal}
+  .hero p.lead{font-size:1rem;margin-bottom:24px}
+  .hero-ctas{flex-direction:column;align-items:stretch;gap:10px}
+  .hero-ctas .btn{width:100%;padding:14px 20px}
+  .hero-points{flex-direction:column;gap:12px;margin-top:26px}
+  .hero-points div{max-width:none;width:100%}
+  .hero-visual img{border-radius:22px}
+  .hero-wave{display:none}
+  .section-head h2{font-size:clamp(1.55rem,6.6vw,1.95rem)}
+  .section-head{margin-bottom:32px}
+  .strip-in{justify-content:flex-start;gap:10px 18px;font-size:.88rem;padding:18px 16px}
+  .svc{border-radius:22px}
+  .svc-feats{padding:18px 20px}
+  .feat-list li{padding:17px 18px}
+  .tabs{gap:8px}
+  .tab{flex:1 1 auto;text-align:center;padding:9px 14px;font-size:.88rem}
+  .finder{padding:26px 20px;border-radius:24px;gap:26px}
+  .form-card{padding:24px 20px;border-radius:22px}
+  .info-row{padding:17px 18px}
+  .phone{width:100%}
+  .fs-official{flex-direction:column;gap:12px;padding:22px 24px}
+  .fs-cta-row .btn{flex:1 1 100%;justify-content:center}
+  .summary-actions .btn{flex:1 1 auto}
+  .footer-bottom{flex-direction:column;gap:6px}
+  footer.site{padding:48px 0 calc(26px + env(safe-area-inset-bottom))}
+  html.js .svc.reveal.in,html.js .band-list li.reveal.in,html.js .cp-list li.reveal.in,html.js .step.reveal.in,html.js .why.reveal.in{animation-name:revealIn}
+}
+
+/* ---------- Small phones: <=480px ---------- */
+@media (max-width:480px){
+  .logo-text span{display:none}
+  .logo-text b{font-size:.88rem}
+  .logo-img{height:34px;max-width:46px}
+  .lang-switch button{padding:5px 8px;font-size:.75rem}
+  .section{padding:54px 0}
+  .step .num{font-size:2.1rem}
+  .svc-num{font-size:1.6rem}
+  .svc .ic{width:52px;height:52px}
+  .svc .ic svg{width:25px;height:25px}
+  .band-list li{grid-template-columns:40px minmax(0,1fr);padding:20px 18px;gap:6px 16px}
+  .band-list .n{width:38px;height:38px;font-size:.95rem}
+  .phone-screen{height:500px}
+  .wa-chips{padding:10px}
+  .chip{padding:7px 12px;font-size:.8rem}
+  .logo-grid{gap:12px}
+  .logo-grid li{height:118px;min-height:118px;padding:14px 12px;border-radius:18px}
+  .logo-grid img{height:70px;max-height:70px}
+}
+
+/* touch devices: no sideways hover shifts */
+@media (hover:none){
+  .svc:hover,.step:hover,.why:hover,.tab-panel>div:hover,.band-list li:hover,.cp-list li:hover,.feat-list li:hover{transform:none}
+  .btn:hover{transform:none}
+  .hero-visual:hover img,.split-media:hover img{transform:none}
 }
 </style>
 <style>nav.main a.nav-current{color:var(--brand);background:var(--brand-soft)}</style>
